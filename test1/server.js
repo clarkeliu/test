@@ -4,7 +4,7 @@ var url = require("url");
 function start(routeproc) {
 
 	function execute(request, response) {
-		console.log("request received.");
+		console.log("request received: " + request.url);
 		var pathname = url.parse(request.url).pathname;
 		var query = url.parse(request.url).query;
 		routeproc(pathname, query, response);
